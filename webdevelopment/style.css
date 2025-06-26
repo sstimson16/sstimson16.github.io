@@ -1,3 +1,10 @@
-h1 {
-    color: #3366CC; 
+/* Headings in blue */
+h1,
+h3 {
+  color: #3366CC;
+}
+
+/* Body text */
+p {
+  color: #0A0F15;
 }
