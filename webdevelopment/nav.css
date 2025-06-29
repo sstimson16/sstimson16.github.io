@@ -67,3 +67,21 @@ nav li ul li a {
 nav li ul li a:hover {
   background-color: #e0e0e0;
 }
+/* SECOND-LEVEL DROPDOWNS */
+nav li ul li {
+  position: relative;
+}
+
+nav li ul li ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* second-level opens to the right */
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav li ul li:hover ul {
+  display: block;
+}
