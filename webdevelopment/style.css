@@ -16,7 +16,7 @@ p {
 }
 
 /* Indent the first line of all paragraphs except the first */
-.reflection-box p:not(:first-of-type)::first-line {
+.reflection-box p:not(:first-of-type){
   text-indent: 2em;
 }
 
