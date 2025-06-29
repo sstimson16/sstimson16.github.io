@@ -8,6 +8,7 @@ h3 {
 p {
   color: #0A0F15;
 }
+
 /* Style the first letter of the first paragraph */
 .reflection-box p:first-of-type::first-letter {
   font-size: 200%;
@@ -16,7 +17,7 @@ p {
 }
 
 /* Indent the first line of all paragraphs except the first */
-.reflection-box p:not(:first-of-type){
+.reflection-box p:not(:first-of-type) {
   text-indent: 2em;
 }
 
