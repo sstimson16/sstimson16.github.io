@@ -8,3 +8,23 @@ h3 {
 p {
   color: #0A0F15;
 }
+/* Style the first letter of the first paragraph */
+.reflection-box p:first-of-type::first-letter {
+  font-size: 200%;
+  font-weight: bold;
+  color: #3366CC;
+}
+
+/* Indent the first line of all paragraphs except the first */
+.reflection-box p:not(:first-of-type)::first-line {
+  text-indent: 2em;
+}
+
+/* Apply box model to the reflection content */
+.reflection-box {
+  padding: 1.5em;
+  margin: 1em auto;
+  max-width: 800px;
+  background-color: #FBF8F4;
+  border: none;
+}
