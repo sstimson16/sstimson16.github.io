@@ -4,7 +4,6 @@ nav {
   position: relative;
 }
 
-/* Only top-level ul is flex (horizontal) */
 nav > ul {
   list-style-type: none;
   margin: 0;
@@ -12,22 +11,6 @@ nav > ul {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* All dropdown menus should be block and vertical */
-nav ul ul {
-  list-style-type: none;
-  display: none; /* hidden by default */
-  position: absolute;
-  top: 100%; /* place below parent item */
-  left: 0;
-  background-color: #ffffff;
-  padding: 0;
-  margin: 0;
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  flex-direction: column; /* just in case */
 }
 
 nav li {
@@ -46,16 +29,28 @@ nav a:hover {
   color: #3366cc;
 }
 
-/* Show dropdown only on immediate hover */
+/* Dropdown styling */
+nav li ul {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
 nav li:hover > ul {
   display: block;
 }
 
-/* Dropdown list items */
 nav li ul li {
   width: 100%;
   border-bottom: 1px solid #ddd;
-  position: relative;
 }
 
 nav li ul li:last-child {
@@ -72,19 +67,28 @@ nav li ul li a:hover {
   background-color: #e0e0e0;
 }
 
-/* SECOND-LEVEL DROPDOWNS */
-nav li ul li ul {
-  display: none; /* hide nested dropdown by default */
-  position: absolute;
-  top: 0;
-  left: 100%; /* opens to the right */
-  background-color: #ffffff;
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
-}
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  nav > ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Show nested dropdown only on immediate hover */
-nav li ul li:hover > ul {
-  display: block;
+  nav li {
+    margin: 10px 0;
+  }
+
+  nav li ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  nav li:hover > ul {
+    display: none; /* Prevent hover issues on mobile */
+  }
+
+  nav li:focus-within > ul,
+  nav li:active > ul {
+    display: block;
+  }
 }
