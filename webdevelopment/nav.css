@@ -4,6 +4,15 @@ nav {
   position: relative;
 }
 
+/* Hamburger menu icon, hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Main nav list styling */
 nav > ul {
   list-style-type: none;
   margin: 0;
@@ -69,9 +78,25 @@ nav li ul li a:hover {
 
 /* Mobile tweaks */
 @media (max-width: 768px) {
+  /* Show hamburger menu */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav menu by default */
   nav > ul {
+    display: none;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Show nav menu when active */
+  nav > ul.active {
+    display: flex;
   }
 
   nav li {
@@ -81,14 +106,16 @@ nav li ul li a:hover {
   nav li ul {
     position: static;
     box-shadow: none;
+    display: none !important; /* Always hide dropdowns on mobile */
   }
 
+  /* Disable hover dropdown on mobile */
   nav li:hover > ul {
-    display: none; /* Prevent hover issues on mobile */
+    display: none;
   }
 
   nav li:focus-within > ul,
   nav li:active > ul {
-    display: block;
+    display: none;
   }
 }

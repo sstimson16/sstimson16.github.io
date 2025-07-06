@@ -126,7 +126,7 @@ section {
   color: #0A0F15;
 }
 
-/* Responsive layout */
+/* Responsive layout for tablets and small screens */
 @media (max-width: 768px) {
   .bio-grid {
     grid-template-columns: 1fr;
@@ -157,5 +157,124 @@ section {
   nav ul {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* Mobile styles for screens 600px and smaller */
+@media (max-width: 600px) {
+  main {
+    padding: 10px 15px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #3366CC;
+    font-size: 1rem;
+  }
+
+  .bio-grid {
+    display: block;
+    padding: 1rem;
+  }
+
+  .education {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .two-column {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-box,
+  .right-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-horizontal {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  img, .headshot img, .edu-logo img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+/* Homepage Layout: Welcome (left) + Logo (right) + Rationale (below) */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #FBF8F4;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.welcome h2 {
+  font-size: 1.8rem;
+  color: #3366CC;
+  margin-bottom: 0.5rem;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Rationale Box */
+.rationale {
+  background-color: #FBF8F4;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.rationale h3 {
+  color: #3366CC;
+  margin-bottom: 1rem;
+}
+
+/* Responsive version for mobile devices */
+@media (max-width: 768px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logo img {
+    max-width: 150px;
+    margin-top: 1rem;
+  }
+
+  .rationale {
+    padding: 1.5rem;
   }
 }
