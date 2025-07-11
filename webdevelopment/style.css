@@ -342,78 +342,99 @@ section {
     display: none !important;
   }
 
-  /* Show containers we want */
+  /* Show top-level containers and key sections */
   header,
   main,
-  footer.footer-horizontal {
+  footer.footer-horizontal,
+  .bio-grid,
+  .about,
+  .two-column,
+  .left-box,
+  .right-box,
+  .education,
+  .education-list,
+  .quote {
     display: block !important;
   }
 
-  /* Show the specific elements inside header, main, footer */
-
-  /* Show your name */
+  /* Show the H1 name */
   header h1 {
     display: block !important;
     font-size: 18pt !important;
-    margin-bottom: 0.2em !important;
+    margin-bottom: 0.5em !important;
   }
 
-  /* Show all paragraphs inside main (your description) */
-  main p {
+  /* Show About paragraphs */
+  .about p {
     display: block !important;
     font-size: 10pt !important;
     margin-bottom: 0.3em !important;
-    line-height: 1.2 !important;
-    font-family: "Times New Roman", serif !important;
+    line-height: 1.3 !important;
     color: black !important;
+    font-family: "Times New Roman", serif !important;
   }
 
-  /* Show education list */
-  ul.education-list,
-  ul.education-list li {
-    display: list-item !important;
-    padding-left: 1.2em !important;
-    list-style-position: inside !important;
+@media print {
+  /* show education section and list */
+  .education,
+  .education h2,
+  .education-list,
+  .education-list li {
+    display: block !important;
     font-family: "Times New Roman", serif !important;
-    font-size: 10pt !important;
     color: black !important;
+    font-size: 10pt !important;
     margin-bottom: 0.3em !important;
   }
+}
 
-  /* Show quote */
+  /* Show Quote section and blockquote */
+  .quote,
+  .quote h2,
   blockquote {
     display: block !important;
-    border-left: 3px solid black !important;
-    padding-left: 0.5em !important;
+    border-left: 4px solid black !important;
+    padding-left: 0.75em !important;
     font-style: italic !important;
+    margin: 1em 0 !important;
     font-family: "Times New Roman", serif !important;
-    font-size: 10pt !important;
     color: black !important;
-    margin: 1.5em 0 !important;
   }
 
-  /* Show footer paragraphs but hide images/links */
+  /* Show Footer text paragraphs */
   footer.footer-horizontal p {
     display: block !important;
-    font-family: "Times New Roman", serif !important;
     font-size: 9pt !important;
-    color: black !important;
     margin-bottom: 0.2em !important;
+    color: black !important;
+    font-family: "Times New Roman", serif !important;
   }
 
+  /* Hide footer images and icons */
   footer.footer-horizontal img,
-  footer.footer-horizontal a[href*="linkedin.com"] {
+  footer.footer-horizontal a[href*="linkedin.com"] > img {
     display: none !important;
   }
 
-  /* Remove padding, margin, shadows from main containers */
-  body, main, section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  /* Remove backgrounds, shadows, padding/margins to save space */
+  section,
+  .left-box,
+  .right-box,
+  main,
+  footer.footer-horizontal {
     background: none !important;
     box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 1em 0 !important;
+  }
+
+  /* Prevent page breaks inside these containers */
+  .bio-grid,
+  .education,
+  .quote,
+  footer.footer-horizontal {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 .footer-icon {
@@ -443,5 +464,17 @@ footer.footer-horizontal a {
   height: 20px;
   vertical-align: middle;
   margin-right: 8px;
+}
+/* Animate footer icons on hover */
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2); /* Enlarge icon by 20% */
 }
 
