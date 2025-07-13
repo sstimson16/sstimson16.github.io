@@ -320,9 +320,11 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 .education-list {
   font-family: 'Nobile', sans-serif;
 }
+
 @media print {
   @page {
     margin: 1in;
@@ -435,12 +437,14 @@ section {
     page-break-inside: avoid;
   }
 }
+
 .footer-icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-right: 8px;
 }
+
 footer.footer-horizontal {
   background-image: url("images/background.jpg");
   background-repeat: no-repeat;
@@ -463,6 +467,7 @@ footer.footer-horizontal a {
   vertical-align: middle;
   margin-right: 8px;
 }
+
 /* Animate footer icons on hover */
 .footer-icon {
   width: 20px;
@@ -476,9 +481,10 @@ footer.footer-horizontal a {
   transform: scale(1.2); /* Enlarge icon by 20% */
 }
 
-/* Container for each project: flex with gap and center alignment */
+/* Container for each project: always left + right side-by-side */
 .project-container {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   justify-content: center;
   align-items: flex-start;
@@ -488,24 +494,14 @@ footer.footer-horizontal a {
   box-sizing: border-box;
 }
 
-/* Left-aligned layout: info on left, explanation on right */
-.project-left {
-  flex-direction: row;
-}
-
-/* Right-aligned layout: explanation on left, info on right */
-.project-right {
-  flex-direction: row-reverse;
-}
-
-/* Project info and explanation columns */
+/* Left and Right Boxes inside each project */
 .project-info,
 .project-explanation {
   flex: 1;
   min-width: 280px; /* prevent columns from getting too narrow */
 }
 
-/* Styling for the project info (title, image, rationale) */
+/* Styling for the project info (title, location, image, reflection) */
 .project-title-info h2 {
   margin-bottom: 0.2rem;
   color: #3366CC;
@@ -527,9 +523,9 @@ footer.footer-horizontal a {
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
 }
 
-/* Reflection or rationale paragraph styling */
 .reflection {
   font-style: italic;
   color: #444;
@@ -546,9 +542,7 @@ footer.footer-horizontal a {
 
 /* Responsive: stack columns vertically on narrower screens */
 @media (max-width: 768px) {
-  .project-container,
-  .project-left,
-  .project-right {
+  .project-container {
     flex-direction: column !important;
     max-width: 100%;
     margin: 2rem 1rem;
@@ -575,24 +569,19 @@ footer.footer-horizontal a {
     max-width: 280px;
   }
 }
+
 .project-image {
   display: block;
   margin: 1rem auto;
 }
 
-@media (min-width: 769px) {
-  .project-left {
-    flex-direction: row !important;
-  }
-  .project-right {
-    flex-direction: row-reverse !important;
-  }
-}
+/* Smaller headshot on phones */
 @media (max-width: 480px) {
   .headshot img {
-    max-width: 100px; /* smaller on phones */
+    max-width: 100px;
   }
 }
+
 /* Hamburger toggle behavior without JavaScript */
 .nav-toggle {
   display: none;
