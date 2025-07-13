@@ -593,3 +593,12 @@ footer.footer-horizontal a {
     max-width: 100px; /* smaller on phones */
   }
 }
+/* Hamburger toggle behavior without JavaScript */
+.nav-toggle {
+  display: none;
+}
+
+/* Show nav when checkbox is checked */
+.nav-toggle:checked + .hamburger + ul {
+  display: flex;
+}
