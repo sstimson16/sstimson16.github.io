@@ -476,3 +476,115 @@ footer.footer-horizontal a {
   transform: scale(1.2); /* Enlarge icon by 20% */
 }
 
+/* Container for each project: flex with gap and center alignment */
+.project-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Left-aligned layout: info on left, explanation on right */
+.project-left {
+  flex-direction: row;
+}
+
+/* Right-aligned layout: explanation on left, info on right */
+.project-right {
+  flex-direction: row-reverse;
+}
+
+/* Project info and explanation columns */
+.project-info,
+.project-explanation {
+  flex: 1;
+  min-width: 280px; /* prevent columns from getting too narrow */
+}
+
+/* Styling for the project info (title, image, rationale) */
+.project-title-info h2 {
+  margin-bottom: 0.2rem;
+  color: #3366CC;
+  font-size: 1.6rem;
+}
+
+.project-title-info .location,
+.project-title-info .dates {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0.1rem 0;
+  color: #555;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Reflection or rationale paragraph styling */
+.reflection {
+  font-style: italic;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Explanation text styling */
+.project-explanation p {
+  line-height: 1.6;
+  color: #0A0F15;
+  font-size: 1rem;
+}
+
+/* Responsive: stack columns vertically on narrower screens */
+@media (max-width: 768px) {
+  .project-container,
+  .project-left,
+  .project-right {
+    flex-direction: column !important;
+    max-width: 100%;
+    margin: 2rem 1rem;
+  }
+
+  .project-info,
+  .project-explanation {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .project-image {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .project-title-info h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    max-width: 280px;
+  }
+}
+.project-image {
+  display: block;
+  margin: 1rem auto;
+}
+
+@media (min-width: 769px) {
+  .project-left {
+    flex-direction: row !important;
+  }
+  .project-right {
+    flex-direction: row-reverse !important;
+  }
+}
