@@ -588,3 +588,8 @@ footer.footer-horizontal a {
     flex-direction: row-reverse !important;
   }
 }
+@media (max-width: 480px) {
+  .headshot img {
+    max-width: 100px; /* smaller on phones */
+  }
+}
