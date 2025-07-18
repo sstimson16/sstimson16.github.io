@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <!--Title: Contact Page
+  Use: To contact Sami Stimson
+  Author: Sami Stimson
+  School/Term: University of Missouri, Summer 2025
+  Developed: July 2025
+  Tested: July 2025; Passed on Safari and Chrome browsers. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sami Stimson | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+</head>
+
+<body>
+  <header>
+    <h1>Sami Stimson</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="project.html">Projects</a>
+        <ul>
+          <li><a href="project.html#project1">Project 1</a></li>
+          <li><a href="project.html#project2">Project 2</a></li>
+          <li><a href="project.html#project3">Project 3</a></li>
+          <li><a href="project.html#project4">Project 4</a></li>
+        </ul>
+      </li>
+      <li><a href="reflection.html">Reflection</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="#" method="post" id="contactForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+      <div class="contact-image">
+    <img src="images/contactme.png" alt="Contact Me Illustration">
+  </div>
+  </main>
+
+  <footer class="footer-horizontal">
+    <div class="footer-contact">
+      <p>
+        <img src="images/phone.png" alt="Phone Icon" class="footer-icon">
+        (314) 803-5454
+      </p>
+      <p>
+        <img src="images/email.png" alt="Email Icon" class="footer-icon">
+        <a href="mailto:sas82n@umsystem.edu">sas82n@umsystem.edu</a>
+      </p>
+      <p>
+        <img src="images/location.png" alt="Location Icon" class="footer-icon">
+        St. Louis, MO
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/samistimson" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn Icon" class="footer-icon" style="height: 30px;">
+          LinkedIn Profile
+        </a>
+      </p>
+    </div>
+    <p>&copy; 2025 Sami Stimson. All rights reserved.</p>
+  </footer>
+</body>
+</html>
