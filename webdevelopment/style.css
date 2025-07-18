@@ -78,7 +78,7 @@ blockquote {
 section {
   background-color: #FBF8F4;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 10px;
   max-width: 1000px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -487,7 +487,7 @@ footer.footer-horizontal a {
   flex-direction: row;
   gap: 2rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   max-width: 900px;
   margin: 3rem auto;
   padding: 1rem;
@@ -743,4 +743,24 @@ main {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.project-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch; /* keep stretch so children fill height */
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 250px; /* example fixed height for vertical centering */
+}
+
+.project-explanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: flex-start; /* left align horizontally */
+  text-align: left;
 }
