@@ -12,11 +12,13 @@
 /* General Typography */
 h1, h2 {
   color: #3366CC;
+  font-size: 1.5em;
 }
 
 p {
   color: #0A0F15;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 blockquote {
@@ -763,4 +765,50 @@ main {
   justify-content: center; /* vertical center */
   align-items: flex-start; /* left align horizontally */
   text-align: left;
+}
+/* Table Styles for Mobile Devices */
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%; 
+    table-layout: auto; 
+    margin: 0 auto; 
+  }
+
+  th, td {
+    padding: 8px; 
+    text-align: center; 
+  }
+
+  th, td {
+    font-size: 0.9rem; 
+  }
+
+  /* Ensure table header remains visible */
+  thead {
+    display: table-header-group; /* Keep the header visible */
+  }
+
+  /* Stack the table into a block format for mobile */
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 1rem; 
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%; 
+    text-align: left; 
+  }
+
+  td::before {
+    content: attr(data-label); /* Add the column title before the cell content */
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: bold; /* Make the label bold */
+  }
 }
