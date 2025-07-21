@@ -810,8 +810,8 @@ main {
 }
 
 /* Responsive Table Styles */
-@media screen and (max-width: 600px) {
-  .education-table {
+@media screen and (max-width: 400px) {
+  .Projects table {
     width: 100%;
     table-layout: auto;
     margin: 0 auto; 
@@ -821,12 +821,12 @@ main {
   }
 
   th, td {
-    padding: 10px;
-    font-size: 0.9rem; /* Slightly smaller font size for better readability on mobile */
+    padding: 5px;
+    font-size: 0.4rem; /* Slightly smaller font size for better readability on mobile */
   }
 
   /* Ensure the table is scrollable horizontally */
-  .education-table {
+  .Projects table {
     margin: 0 auto;
     display: block;
   }
@@ -846,7 +846,7 @@ main {
 
   /* Adjust spacing between rows on mobile */
   tr {
-    margin-bottom: 1rem; 
+    margin-bottom: 0.5rem; 
   }
 
   /* Reduce padding and adjust font size */
