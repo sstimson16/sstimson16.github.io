@@ -766,52 +766,100 @@ main {
   align-items: flex-start; /* left align horizontally */
   text-align: left;
 }
-/* Table Styles for Mobile Devices */
-@media screen and (max-width: 600px) {
-  table {
-    width: 100%; 
-    table-layout: auto; 
-    margin: 0 auto; 
+/* TABLE STYLES */
+.Projects table {
+    width: 100%;
     border-collapse: collapse;
-    display: block; 
-    overflow-x: auto; 
-    white-space: nowrap; 
+    margin: 1.5rem 0;
+    font-family: 'Inter', sans-serif;
+    max-width: 100%;
+    display: block; /* Makes it scrollable horizontally */
+    overflow-x: auto; /* Enables horizontal scroll if needed */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.Projects table th {
+    background-color: var(--sapphire-blue);
+    color: var(--pure-white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--medium-gray);
+}
+
+.Projects table td {
+    color: var(--cool-gray);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    line-height: 1.4;
+}
+
+.Projects table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.Projects table tr:nth-child(odd) {
+    background-color: var(--pure-white);
+}
+
+.Projects table tr:hover {
+    background-color: #edf2f7;
+}
+
+/* Responsive Table Styles */
+@media screen and (max-width: 600px) {
+  .education-table {
+    width: 100%;
+    table-layout: auto;
+    margin: 0 auto; 
+    display: block;
+    overflow-x: auto; /* Makes the table scrollable horizontally */
+    white-space: nowrap; /* Prevents the text from wrapping */
   }
 
   th, td {
-    padding: 8px; 
-    text-align: center; 
-    word-wrap: break-word; 
+    padding: 10px;
+    font-size: 0.9rem; /* Slightly smaller font size for better readability on mobile */
   }
 
-  /* Adjust font size of table text for better readability on small screens */
-  th, td {
-    font-size: 0.9rem; /* Slightly smaller text for mobile */
+  /* Ensure the table is scrollable horizontally */
+  .education-table {
+    margin: 0 auto;
+    display: block;
   }
 
-  /* Optional: Make the table header sticky for better UX */
+  /* Sticky header */
   thead {
     position: sticky;
     top: 0;
-    background-color: #fff; 
-    z-index: 1; 
+    background-color: #fff;
+    z-index: 1;
   }
 
-  /* Remove vertical stacking on mobile (let the table flow naturally) */
-  table, thead, tbody, th, td, tr {
-    display: inline-block;
-    width: auto;
+  /* Table text alignment */
+  th, td {
+    text-align: center; /* Align text centrally in the cells */
   }
 
+  /* Adjust spacing between rows on mobile */
   tr {
-    margin-bottom: 1rem; /* Space between rows */
+    margin-bottom: 1rem; 
   }
 
-  /* Adjust the table header */
-  th {
-    background-color: #3366cc;
-    color: white;
-    font-weight: bold;
+  /* Reduce padding and adjust font size */
+  td {
+    padding-left: 50%; 
+    text-align: left;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: bold; /* Make the label bold */
   }
 }
-
