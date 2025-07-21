@@ -821,7 +821,7 @@ table {
   border-collapse: collapse;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  min-width: 600px; /* Ensure the table is wide enough for readability */
+  table-layout: auto; /* Ensures the table is more flexible */
 }
 
 thead th, tbody td {
@@ -853,14 +853,26 @@ tfoot td {
 @media screen and (max-width: 768px) {
   table {
     font-size: 14px; /* Adjust font size for mobile */
+    width: 100%;
   }
 
   td, th {
     padding: 10px 12px; /* Adjust padding for mobile */
+    word-wrap: break-word; /* Ensure text breaks correctly */
   }
 
   .table-container {
     overflow-x: auto; /* Enable horizontal scroll for narrow screens */
+  }
+
+  thead th {
+    font-size: 14px; /* Smaller font size for headers on mobile */
+    padding: 8px 10px; /* Reduce header padding */
+  }
+
+  tbody td {
+    font-size: 12px; /* Smaller font size for table data on mobile */
+    padding: 8px 10px; /* Adjust padding for better spacing */
   }
 }
 
@@ -872,6 +884,7 @@ tfoot td {
 
   td, th {
     padding: 8px 10px; /* Smaller padding for better spacing */
+    word-wrap: break-word; /* Ensure text wraps correctly */
   }
 
   tr {
