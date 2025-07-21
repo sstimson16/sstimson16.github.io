@@ -772,43 +772,46 @@ main {
     width: 100%; 
     table-layout: auto; 
     margin: 0 auto; 
+    border-collapse: collapse;
+    display: block; 
+    overflow-x: auto; 
+    white-space: nowrap; 
   }
 
   th, td {
     padding: 8px; 
     text-align: center; 
+    word-wrap: break-word; 
   }
 
+  /* Adjust font size of table text for better readability on small screens */
   th, td {
-    font-size: 0.9rem; 
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
   }
 
-  /* Ensure table header remains visible */
+  /* Optional: Make the table header sticky for better UX */
   thead {
-    display: table-header-group; /* Keep the header visible */
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1; 
   }
 
-  /* Stack the table into a block format for mobile */
+  /* Remove vertical stacking on mobile (let the table flow naturally) */
   table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
   }
 
   tr {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem; /* Space between rows */
   }
 
-  td {
-    position: relative;
-    padding-left: 50%; 
-    text-align: left; 
-  }
-
-  td::before {
-    content: attr(data-label); /* Add the column title before the cell content */
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    font-weight: bold; /* Make the label bold */
+  /* Adjust the table header */
+  th {
+    background-color: #3366cc;
+    color: white;
+    font-weight: bold;
   }
 }
+
