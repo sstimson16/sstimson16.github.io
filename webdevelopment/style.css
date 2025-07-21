@@ -866,13 +866,13 @@ tfoot td {
   }
 
   thead th {
-    font-size: 14px; /* Smaller font size for headers on mobile */
-    padding: 8px 10px; /* Reduce header padding */
+    font-size: 14px;
+    padding: 8px 10px; 
   }
 
   tbody td {
-    font-size: 12px; /* Smaller font size for table data on mobile */
-    padding: 8px 10px; /* Adjust padding for better spacing */
+    font-size: 12px; 
+    padding: 8px 10px; 
   }
 }
 
@@ -905,7 +905,7 @@ tfoot td {
     font-weight: bold;
   }
 
-  /* Optional: Adjust header font size for smaller screens */
+  /* Adjust header font size for smaller screens */
   thead th {
     font-size: 14px;
   }
