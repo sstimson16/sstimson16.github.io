@@ -12,11 +12,13 @@
 /* General Typography */
 h1, h2 {
   color: #3366CC;
+  font-size: 1.5em;
 }
 
 p {
   color: #0A0F15;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 blockquote {
@@ -320,9 +322,11 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 .education-list {
   font-family: 'Nobile', sans-serif;
 }
+
 @media print {
   @page {
     margin: 1in;
@@ -374,8 +378,7 @@ section {
     font-family: "Times New Roman", serif !important;
   }
 
-@media print {
-  /* show education section and list */
+  /* Show education section and list */
   .education,
   .education h2,
   .education-list,
@@ -386,7 +389,6 @@ section {
     font-size: 10pt !important;
     margin-bottom: 0.3em !important;
   }
-}
 
   /* Show Quote section and blockquote */
   .quote,
@@ -437,12 +439,14 @@ section {
     page-break-inside: avoid;
   }
 }
+
 .footer-icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-right: 8px;
 }
+
 footer.footer-horizontal {
   background-image: url("images/background.jpg");
   background-repeat: no-repeat;
@@ -465,6 +469,7 @@ footer.footer-horizontal a {
   vertical-align: middle;
   margin-right: 8px;
 }
+
 /* Animate footer icons on hover */
 .footer-icon {
   width: 20px;
@@ -478,3 +483,430 @@ footer.footer-horizontal a {
   transform: scale(1.2); /* Enlarge icon by 20% */
 }
 
+/* Container for each project: always left + right side-by-side */
+.project-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Left and Right Boxes inside each project */
+.project-info,
+.project-explanation {
+  flex: 1;
+  min-width: 280px; /* prevent columns from getting too narrow */
+}
+
+/* Styling for the project info (title, location, image, reflection) */
+.project-title-info h2 {
+  margin-bottom: 0.2rem;
+  color: #3366CC;
+  font-size: 1.6rem;
+}
+
+.project-title-info .location,
+.project-title-info .dates {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0.1rem 0;
+  color: #555;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.reflection {
+  font-style: italic;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Explanation text styling */
+.project-explanation p {
+  line-height: 1.6;
+  color: #0A0F15;
+  font-size: 1rem;
+}
+
+/* Responsive: stack columns vertically on narrower screens */
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column !important;
+    max-width: 100%;
+    margin: 2rem 1rem;
+  }
+
+  .project-info,
+  .project-explanation {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .project-image {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .project-title-info h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    max-width: 280px;
+  }
+}
+
+.project-image {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Smaller headshot on phones */
+@media (max-width: 480px) {
+  .headshot img {
+    max-width: 100px;
+  }
+}
+
+/* Hamburger toggle behavior without JavaScript */
+.nav-toggle {
+  display: none;
+}
+
+/* Show nav when checkbox is checked */
+.nav-toggle:checked + .hamburger + ul {
+  display: flex;
+}
+
+/* ======= TABLE STYLES ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  border: 2px solid #444;
+  font-family: Arial, sans-serif;
+}
+
+figcaption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+thead tr,
+table tr:last-child {
+  background-color: #3366cc;
+  color: #fff;
+}
+
+/* Alternate row coloring */
+tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: bold;
+  }
+}
+thead tr,
+tfoot tr {
+  background-color: #3366cc;
+  color: #fff;
+}
+/* Contact Form Styling */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #3366cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-form button:hover {
+  background-color: #254a9b;
+}
+
+/* Responsive form fix */
+@media screen and (max-width: 700px) {
+  .contact-form {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.contact-form {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.contact-image {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.project-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch; /* keep stretch so children fill height */
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 250px; /* example fixed height for vertical centering */
+}
+
+.project-explanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: flex-start; /* left align horizontally */
+  text-align: left;
+}
+/* TABLE STYLES */
+.Projects table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-family: 'Inter', sans-serif;
+    max-width: 100%;
+    display: block; /* Makes it scrollable horizontally */
+    overflow-x: auto; /* Enables horizontal scroll if needed */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.Projects table th {
+    background-color: var(--sapphire-blue);
+    color: var(--pure-white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--medium-gray);
+}
+
+.Projects table td {
+    color: var(--cool-gray);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    line-height: 1.4;
+}
+
+.Projects table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.Projects table tr:nth-child(odd) {
+    background-color: var(--pure-white);
+}
+
+.Projects table tr:hover {
+    background-color: #edf2f7;
+}
+
+/* Wrap table in container for horizontal scroll */
+.table-container {
+  overflow-x: auto; /* Allow horizontal scrolling on mobile */
+  margin-top: 20px;
+}
+
+/* Make the table responsive */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  table-layout: auto; /* Ensures the table is more flexible */
+}
+
+thead th, tbody td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #004080;
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f0f8ff;
+}
+
+tbody tr:hover {
+  background-color: #cce0ff;
+}
+
+tfoot td {
+  background-color: #004080;
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+/* Mobile Styles for Table */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px; /* Adjust font size for mobile */
+    width: 100%;
+  }
+
+  td, th {
+    padding: 10px 12px; /* Adjust padding for mobile */
+    word-wrap: break-word; /* Ensure text breaks correctly */
+  }
+
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scroll for narrow screens */
+  }
+
+  thead th {
+    font-size: 14px; /* Smaller font size for headers on mobile */
+    padding: 8px 10px; /* Reduce header padding */
+  }
+
+  tbody td {
+    font-size: 12px; /* Smaller font size for table data on mobile */
+    padding: 8px 10px; /* Adjust padding for better spacing */
+  }
+}
+
+/* Responsive Mobile Table */
+@media screen and (max-width: 600px) {
+  table {
+    font-size: 12px; /* Smaller font for very small screens */
+  }
+
+  td, th {
+    padding: 8px 10px; /* Smaller padding for better spacing */
+    word-wrap: break-word; /* Ensure text wraps correctly */
+  }
+
+  tr {
+    margin-bottom: 1rem;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%; /* Add space for labels */
+    text-align: left;
+  }
+
+  td::before {
+    content: attr(data-label); /* Show column labels on mobile */
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: bold;
+  }
+
+  /* Optional: Adjust header font size for smaller screens */
+  thead th {
+    font-size: 14px;
+  }
+}
