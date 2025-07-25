@@ -324,7 +324,7 @@ section {
 }
 
 .education-list {
-  font-family: 'Nobile', sans-serif;
+  font-family: "Times New Roman", serif !important;
 }
 
 @media print {
@@ -483,8 +483,8 @@ footer.footer-horizontal a {
   transform: scale(1.2); /* Enlarge icon by 20% */
 }
 
-/* Container for each project: always left + right side-by-side */
-.project-container {
+/* Container for each Job: always left + right side-by-side */
+.Jobs-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -496,29 +496,29 @@ footer.footer-horizontal a {
   box-sizing: border-box;
 }
 
-/* Left and Right Boxes inside each project */
-.project-info,
-.project-explanation {
+/* Left and Right Boxes inside each Job */
+.Jobs-info,
+.Jobs-explanation {
   flex: 1;
   min-width: 280px; /* prevent columns from getting too narrow */
 }
 
-/* Styling for the project info (title, location, image, reflection) */
-.project-title-info h2 {
+/* Styling for the Job info (title, location, image, reflection) */
+.Jobs-title-info h2 {
   margin-bottom: 0.2rem;
   color: #3366CC;
   font-size: 1.6rem;
 }
 
-.project-title-info .location,
-.project-title-info .dates {
+.Jobs-title-info .location,
+.Jobs-title-info .dates {
   font-style: italic;
   font-size: 0.9rem;
   margin: 0.1rem 0;
   color: #555;
 }
 
-.project-image {
+.Jobs-image {
   width: 100%;
   max-width: 350px;
   height: auto;
@@ -536,7 +536,7 @@ footer.footer-horizontal a {
 }
 
 /* Explanation text styling */
-.project-explanation p {
+.Jobs-explanation p {
   line-height: 1.6;
   color: #0A0F15;
   font-size: 1rem;
@@ -544,35 +544,35 @@ footer.footer-horizontal a {
 
 /* Responsive: stack columns vertically on narrower screens */
 @media (max-width: 768px) {
-  .project-container {
+  .Jobs-container {
     flex-direction: column !important;
     max-width: 100%;
     margin: 2rem 1rem;
   }
 
-  .project-info,
-  .project-explanation {
+  .Jobs-info,
+  .Jobs-explanation {
     min-width: auto;
     width: 100%;
   }
 
-  .project-image {
+  .Jobs-image {
     max-width: 100%;
     margin: 1rem 0;
   }
 
-  .project-title-info h2 {
+  .Jobs-title-info h2 {
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 480px) {
-  .project-image {
+  .Jobs-image {
     max-width: 280px;
   }
 }
 
-.project-image {
+.Jobs-image {
   display: block;
   margin: 1rem auto;
 }
@@ -630,6 +630,9 @@ tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
 
+table tr:last-child {
+  color: #000 !important;
+}
 /* Responsive Table */
 @media screen and (max-width: 700px) {
   table, thead, tbody, th, td, tr {
@@ -746,7 +749,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.project-container {
+.Jobs-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -759,7 +762,7 @@ main {
   min-height: 250px; /* example fixed height for vertical centering */
 }
 
-.project-explanation {
+.Jobs-explanation {
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertical center */
@@ -767,7 +770,7 @@ main {
   text-align: left;
 }
 /* TABLE STYLES */
-.Projects table {
+.Jobs table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
@@ -778,7 +781,7 @@ main {
     white-space: nowrap; /* Prevents wrapping */
 }
 
-.Projects table th {
+.Jobs table th {
     background-color: var(--sapphire-blue);
     color: var(--pure-white);
     font-weight: 600;
@@ -788,7 +791,7 @@ main {
     border: 1px solid var(--medium-gray);
 }
 
-.Projects table td {
+.Jobs table td {
     color: var(--cool-gray);
     font-weight: 400;
     font-size: 0.95rem;
@@ -797,15 +800,15 @@ main {
     line-height: 1.4;
 }
 
-.Projects table tr:nth-child(even) {
+.Jobs table tr:nth-child(even) {
     background-color: #f7fafc;
 }
 
-.Projects table tr:nth-child(odd) {
+.Jobs table tr:nth-child(odd) {
     background-color: var(--pure-white);
 }
 
-.Projects table tr:hover {
+.Jobs table tr:hover {
     background-color: #edf2f7;
 }
 
